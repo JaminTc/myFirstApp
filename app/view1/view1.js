@@ -8,7 +8,9 @@ angular.module('myApp.view1', ['ngRoute'])
     controller: 'View1Ctrl'
   });
 }])
+    .controller('View1Ctrl', view1controller);
 
-.controller('View1Ctrl', [function() {
 
-}]);
+function view1controller() {
+
+}
