@@ -1,23 +1,29 @@
+(function(){
+'use strict';
+
 /**
  * Created by JaminTc on 10/30/2016.
  */
-'use strict';
+
 
 angular
-    .module('myApp.service1')
-    .service('service1', firstService);
-firstService.$inject=['$http','ApiBaseUrl'];
+    .module('myApp.firstService',['ngRoute'])
+    .service('firstService', firstService);
+firstService.$inject = ['$http','ApiBaseUrl'];
 
 function firstService($http, ApiBaseUrl) {
 
     this.GetFirstService = getFirstService;
 
 
-    function getFirstService(successCallback, errorCallback) {
+    function getFirstService(person,successCallback, errorCallback) {
         $http({
             method: "GET",
             dataType: "json",
-            url:ApiBaseUrl + "/1"
+            url:ApiBaseUrl + "/Person/" + person.personId
+            //data: person
+            //headers: {'Content-Type': ' application/json; charset=utf-8;'}
+
         })
             .then(
                 function (response) {
@@ -32,3 +38,4 @@ function firstService($http, ApiBaseUrl) {
             );
     }
 }
+})();

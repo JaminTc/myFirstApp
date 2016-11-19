@@ -7,3 +7,4 @@ angular.module('myApp.version.interpolate-filter', [])
     return String(text).replace(/\%VERSION\%/mg, version);
   };
 }]);
+

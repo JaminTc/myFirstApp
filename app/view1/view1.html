@@ -1,2 +1,10 @@
 <h3>Lets Do This Thing!</h3>
 <p>This is the partial for view 1.</p>
+<input type="number" ng-model="vm.person.personId"/>
+<button type="button" ng-click="vm.GetPerson(vm.person)">GetPerson</button>
+<div ng-show="vm.person.isPerson">
+    <h4>You Found a Person!</h4>
+    <div>First Name: {{vm.person.FirstName}}</div>
+    <div>Last Name: {{vm.person.LastName}}</div>
+    <div>Date of Birth: {{vm.person.DateOfBirth | jsonDateFix}}</div>
+</div>
